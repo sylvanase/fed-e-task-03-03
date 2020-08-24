@@ -119,12 +119,12 @@ export default {
     }
   },
   async asyncData(context) {
-    const { params, app } = context
+    const { params, route } = context
     const { data } = await getProfiles(params.username)
     const { profile } = data;
-
-    const loadArticles = app.isFav ? getYourFeedArticles : getArticles;
-    const artReq = app.isFav ? { favorited: profile.username } : {author:profile.username};
+    console.log(route);
+    const loadArticles = route.name === 'profileFavorite' ? getYourFeedArticles : getArticles;
+    const artReq = route.name === 'profileFavorite' ? { favorited: profile.username } : {author:profile.username};
     const { data: articleRes } = await loadArticles(artReq)
 
     const { articles } = articleRes
