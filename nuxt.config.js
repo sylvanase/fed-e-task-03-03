@@ -3,6 +3,7 @@
 */
 module.exports = {
   router: {
+    base: '/fed-e-task-03-03/',
     // 配置路由高亮
     linkActiveClass: 'active',
     // 自定义路由表规则
@@ -74,5 +75,9 @@ module.exports = {
   server: {
     host: '0.0.0.0', // 默认是localhost，对外的话需要设置为0.0.0.0
     port: 3000
+  },
+  generate: {
+    dir:'docs',
+    subFolders: false
   }
 }

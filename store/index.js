@@ -21,7 +21,7 @@ export const actions = {
     // commit 用来提交mutation的方法， req服务端渲染期间请求的对象
     let user = null
     // 如果请求头中有 cookie，解析cookie
-    if(req.headers.cookie) {
+    if(req && req.headers.cookie) {
       // 用cookieparser包，将cookie字符串解析为对象，进行存储
       const parsed = cookieparser.parse(req.headers.cookie)
       try {
