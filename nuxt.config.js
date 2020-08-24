@@ -78,6 +78,6 @@ module.exports = {
   },
   generate: {
     dir:'docs',
-    subFolders: false
+    // subFolders: false
   }
 }
